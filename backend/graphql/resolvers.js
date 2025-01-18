@@ -52,6 +52,7 @@ module.exports = {
         return 'Password reset link sent!';
     },
 
+
     resetPassword: async ({ token, newPassword }) => {
         const hashedPassword = await bcrypt.hash(newPassword, 10);
         const result = await resetPasswordByToken(token, hashedPassword);
@@ -61,3 +62,4 @@ module.exports = {
         return 'Password has been reset!';
     }
 };
+

@@ -24,4 +24,6 @@ const resetPasswordByToken = async (token, newPassword) => {
     return pool.query("UPDATE users SET password = ?, reset_token = NULL WHERE reset_token = ?", [newPassword, token]);
 };
 
+
 module.exports = { createUser, getUserByEmail, verifyUser, storeResetToken, resetPasswordByToken };
+
